@@ -1,113 +1,98 @@
-import Image from "next/image";
+import Explore from "./components/Explore";
+import Faq from "./components/Faq";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import NavBar from "./components/NavBar";
+import Slider1 from "./components/Slider1";
+import TopBar from "./components/TopBar";
+import Trust from "./components/Trust";
+import VIdeoSection from "./components/VIdeoSection";
+import brain from "./assets/Brain.png";
+import Light from "./assets/Lightning Bolt.png";
+import Private from "./assets/Private.png";
+import path from "./assets/Planned Path.png";
+import ScaleUp from "./assets/Scale Up.png";
+import key from "./assets/Key.png";
+
+import Tune from "./assets/Tune.png";
+import Tools from "./assets/Tools.png";
+import Voice from "./assets/Voice.png";
+import Slider2 from "./components/Slider2";
 
 export default function Home() {
+  const cards = [
+    {
+      image: Light,
+      title: "Ultra-Fast Response",
+      description:
+        "Experience lightning-quick interactions with an impressive 500 ms response time, ensuring seamless conversations.",
+    },
+    {
+      image: Private,
+      title: "Smart Interruption Management",
+      description:
+        "Our system adeptly handles interruptions, ensuring smooth, natural dialogues just like human conversations",
+    },
+    {
+      image: brain,
+      title: "Advanced Memory Recall",
+      description:
+        "Remembering context and details from earlier in the conversation, our AI provides a personalized and coherent interaction.",
+    },
+    {
+      image: path,
+      title: "Dynamic Conversational Flows",
+      description:
+        "Navigate through complex conversations with ease, thanks to our AI's ability to understand and adapt to various conversational pathways.",
+    },
+    {
+      image: ScaleUp,
+      title: "Custom AI Solutions",
+      description:
+        "Leverage our proprietary AI models tailored to your specific business needs for unparalleled efficiency and effectiveness.",
+    },
+    {
+      image: key,
+      title: "Scalability at Your Fingertips",
+      description:
+        "From one-on-one conversations to managing 10,000 concurrent calls, our platform scales effortlessly with your business.",
+    },
+  ];
+
+  const SecondCard = [
+    {
+      image: Tune,
+      title: "Fine tuning",
+      description:
+        "Train an AI phone agent on existing phone calls to improve call performance, and build guardrails against hallucination.",
+    },
+    {
+      image: Tune,
+      title: "Custom tools",
+      description:
+        "Enable your phone agent to access external APIs, live during the call, to access customer records and knowledgebases, and perform actions like scheduling appointments.",
+    },
+    {
+      image: Tune,
+      title: "Dedicated infrastructure",
+      description:
+        "Even during moments of high volume, your enterprise’ infrastructure is partitioned from our general API, increasing the reliability of your phone agents.",
+    },
+  ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+      <div className="w-[100%] h-auto overflow-hidden">
+        <TopBar />
+        <NavBar />
+        <HeroSection />
+        <VIdeoSection />
+        <Explore />
+        <Slider1 cards={cards} autoSlide autoSlideInterval={3000} />
+        <Slider2 cards={SecondCard} autoSlide autoSlideInterval={3000} />
+        <Trust />
+        <Faq />
+        <Footer />
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
