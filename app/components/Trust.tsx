@@ -28,13 +28,14 @@ function Trust() {
           businesses, and society as a whole.
         </p>
 
-        <div className="contacts_division w-[100%] h-fit flex flex-wrap justify-center gap-10 mt-10">
+        <div className="contacts_division w-[100%] h-fit flex flex-wrap justify-center gap-10  mt-10">
           {/* -------------------------------------- */}
-          <div className="pfone flex flex-col w-fit h-fit items-center justify-center gap-2">
+         <div className="first_set_icons flex gap-5">
+         <div className="pfone flex flex-col w-fit h-fit items-center justify-center gap-2">
             <div className="phone text-white w-[60px] h-[60px] rounded-[50%] bg-orange-500 flex justify-center items-center">
               <FaPhoneAlt size={30} />
             </div>
-            <h1 className="text-xl">Call Monitoring</h1>
+            <h1 className="text-lg">Call Monitoring</h1>
           </div>
 
           {/* -------------------------------------------*/}
@@ -47,10 +48,12 @@ function Trust() {
                 alt="Filter and Sorting"
               />
             </div>
-            <h1 className="text-xl">Prompt Injection</h1>
+            <h1 className="text-lg">Prompt Injection</h1>
           </div>
+         </div>
           {/* ----------------------------------------- */}
-          <div className="pfone flex flex-col w-fit h-fit justify-center items-center gap-2">
+        <div className="second_set_icons flex gap-8 pl-10">
+        <div className="pfone flex flex-col w-fit h-fit justify-center items-center gap-2">
             <div className="phone text-white w-[60px] h-[60px] rounded-[50%] bg-orange-500 flex justify-center items-center cursor-pointer">
               <Image
                 src={Scales}
@@ -59,7 +62,7 @@ function Trust() {
                 alt="Filter and Sorting"
               />
             </div>
-            <h1 className="text-xl">Rate Limits </h1>
+            <h1 className="text-lg">Rate Limits </h1>
           </div>
           {/* --------------------------------------- */}
           <div className="pfone flex flex-col w-fit h-fit justify-center items-center gap-2">
@@ -71,8 +74,9 @@ function Trust() {
                 alt="Filter and Sorting"
               />
             </div>
-            <h1 className="text-xl">Internal Hard Audits</h1>
+            <h1 className="text-lg">Internal Hard Audits</h1>
           </div>
+        </div>
           {/*--------------------------------------  */}
         </div>
       </div>

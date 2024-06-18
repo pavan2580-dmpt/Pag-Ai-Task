@@ -1,7 +1,7 @@
 "use client";
 
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -29,42 +29,49 @@ const HeroSection: React.FC = () => {
           <h1 className="text-[40px] font-bold">Try now</h1>
           <h1 className="text-gray-400 text-xl">Get a call from Toingg</h1>
           {/* ----------------form-------------------------- */}
-          <form >
-          <div className="border-2 border-black rounded-md mt-5">
-            
-          <input
-            type="text"
-            placeholder="Name"
-            className="input bg-transparent border-black border-solid boder-2 h-[40px] text-xl w-full pl-2"
-            required
-          />
-          </div>
-          <div className="border-2  border-black rounded-md mt-5 mb-10 bg-transparent ">
-          <PhoneInput
-            placeholder="Enter phone number"
-            value={phone}
-            onChange={setPhone}
-            className=" bg-transparent  h-[40px]"
-            required
-          />
-          </div>
-          <div className="w-[100%] h-fit border-2 border-black border-solid rounded-md">
-          <select name="" className="w-full h-[40px] bg-transparent" required>
-          <option value="">Select your language</option>
-            <option value="">English</option>
-            <option value="">Telugu</option>
-            <option value="">Hindi</option>
-            <option value="">Chines</option>
-            <option value="">French</option>
-            <option value="">Tamil</option>
-          </select>
-          </div>
-          <div className="w-[100%] h-fit flex justify-center items-center">
-          <button className="w-[60px] h-[60px] flex justify-center items-center text-white rounded-[50%] bg-orange-500 mt-16">
-            <FaPhoneAlt size={30} />
-          </button>
-          
-          </div>
+          <form>
+            <div className="border-2 border-black rounded-md mt-5">
+              <input
+                type="text"
+                placeholder="Name"
+                className="input bg-transparent border-black border-solid boder-2 h-[40px] text-xl w-full pl-2"
+                required
+              />
+            </div>
+            <div className="border-2  border-black rounded-md mt-5 mb-10 bg-transparent ">
+              <PhoneInput
+                placeholder="Enter phone number"
+                value={phone}
+                onChange={setPhone}
+                country={"in"}
+                inputStyle={{
+                  background:"transparent"
+                }}
+                buttonStyle={{
+                   background:"transparent"
+                }}
+              />
+            </div>
+            <div className="w-[100%] h-fit border-2 border-black border-solid rounded-md">
+              <select
+                name=""
+                className="w-full h-[40px] bg-transparent"
+                required
+              >
+                <option value="">Select your language</option>
+                <option value="">English</option>
+                <option value="">Telugu</option>
+                <option value="">Hindi</option>
+                <option value="">Chines</option>
+                <option value="">French</option>
+                <option value="">Tamil</option>
+              </select>
+            </div>
+            <div className="w-[100%] h-fit flex justify-center items-center">
+              <button className="w-[60px] h-[60px] flex justify-center items-center text-white rounded-[50%] bg-orange-500 mt-16">
+                <FaPhoneAlt size={30} />
+              </button>
+            </div>
           </form>
           {/* ------------------form end ---------------------- */}
         </div>

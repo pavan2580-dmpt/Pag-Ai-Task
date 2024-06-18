@@ -1,20 +1,33 @@
-"use client";
+"use client"
+
+import { useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 import icon4 from "../assets/icon4.png";
 import icon5 from "../assets/6061143-middle.png";
-import { useState } from "react";
 
 function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoId, setVideoId] = useState("");
+
+  useEffect(() => {
+    const youtubeUrl = "https://www.youtube.com/watch?v=_La3wQlntgw";
+    const videoIdRegex = /(?:\?v=|\/embed\/|\/\d\/|\/vi\/|youtu.be\/)([^\?&"'<>#%\{\}|\\^`[\]]*)/;
+    const match = youtubeUrl.match(videoIdRegex);
+    if (match && match[1]) {
+      setVideoId(match[1]);
+    }
+  }, []);
 
   const handlePlayVideo = () => {
     setIsPlaying(true);
   };
+
   return (
-    <div className="VideoSection w-full h-screen pt-10 mt-[200px]">
+    <div className="VideoSection w-full h-screen pt-10 ">
       <h1 className="text-xl text-gray-400 text-center mt-10">
         Automate your agent with 5000+ integrations like
       </h1>
@@ -59,12 +72,12 @@ function VideoSection() {
             </div>
           </div>
         ) : (
-          <video
-            src="https://www.youtube.com/embed/_La3wQlntgw"
-            controls
-            autoPlay
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}`}
+            frameBorder="0"
+            allowFullScreen
             className="w-full max-w-4xl h-auto"
-          ></video>
+          ></iframe>
         )}
       </div>
     </div>

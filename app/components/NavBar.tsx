@@ -2,6 +2,7 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useRef, useState } from "react";
+import { Divider, Dropdown } from 'keep-react'
 
 function NavBar() {
   const [ShowMenu, SetMenu] = useState(true);
@@ -21,10 +22,12 @@ function NavBar() {
 
   return (
     <>
-      <div className="NavBar_Mani_container flex w-[100%] h-[5vh] justify-between px-4 mt-2 box-border overflow-y-hidden">
+      <div className="NavBar_Mani_container flex w-[100%] h-fit justify-between px-4 mt-2 box-border overflow-y-hidden">
         <div className="Logo font-bold text-xl cursor-pointer">Toingg</div>
-        <div className="MenuIcon text-orange-500 cursor-pointer">
+        <div className="MenuIcon text-orange-500 cursor-pointer ">
           <GiHamburgerMenu size={30} onClick={HandleShowMenu} />
+        
+          
         </div>
 
         <div

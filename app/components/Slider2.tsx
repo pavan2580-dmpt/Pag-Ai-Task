@@ -18,11 +18,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
       </center>
       <h3 className="text-xl font-semibold text-center">{title}</h3>
       <p className="mt-2 text-gray-600 text-center">{description}</p>
-      <center>
-        <button className="bg-orange-500 text-white rounded-lg w-[120px] h-fit p-2 cursor-pointer">
-          Try now
-        </button>
-      </center>
+
     </div>
   );
 };

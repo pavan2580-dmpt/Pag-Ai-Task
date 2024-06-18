@@ -1,13 +1,15 @@
-import Image from "next/image";
 import React from "react";
-import Demo from "../assets/videoDemo.png"
+import Image from "next/image";
+import Demo from "../assets/videoDemo.png";
 
 function Explore() {
   return (
-    <div className="w-[100%] h-screen flex justify-center items-center">
+    <div className="w-[100%] h-auto flex justify-center items-center">
       <div className="h-[90vh] w-[80%] bg-[#FFF6E8] rounded-2xl p-1">
-        <div className="video_container w-full h-[45%] flex justify-center items-center flex-nowrap">
-          <Image src={Demo}  alt="Demo video" />
+        <div className="video_container w-full h-[40vh] flex justify-center items-center flex-nowrap">
+          <video loop autoPlay >
+            <source src="https://call.toingg.com/videos/Untitled design (1).mp4" type="video/mp4" />
+          </video>
         </div>
 
         <div className="text_container">
@@ -18,20 +20,18 @@ function Explore() {
 
           <ul className="list-disc list-inside space-y-2">
             <li>
-              <span className="font-bold">Interactive Communication:</span>{" "}
-              Engage in single or batch calls using TOINGG GPT.
+              <span className="font-bold">Interactive Communication:</span> Engage in single or batch calls using TOINGG
+              GPT.
             </li>
             <li>
-              <span className="font-bold">Advanced Features:</span> Leverage GPT
-              for real-time sentiment analysis during calls.
+              <span className="font-bold">Advanced Features:</span> Leverage GPT for real-time sentiment analysis during
+              calls.
             </li>
             <li>
-              <span className="font-bold">Data Export:</span> Conveniently
-              export call logs to CSV.
+              <span className="font-bold">Data Export:</span> Conveniently export call logs to CSV.
             </li>
             <li>
-              <span className="font-bold">Enhanced Usability:</span> Tailored
-              for users familiar with CSV functionalities.
+              <span className="font-bold">Enhanced Usability:</span> Tailored for users familiar with CSV functionalities.
             </li>
           </ul>
           <center>

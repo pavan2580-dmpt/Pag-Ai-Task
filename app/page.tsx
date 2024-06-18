@@ -14,10 +14,15 @@ import path from "./assets/Planned Path.png";
 import ScaleUp from "./assets/Scale Up.png";
 import key from "./assets/Key.png";
 
+import dynamic from "next/dynamic";
+
 import Tune from "./assets/Tune.png";
 import Tools from "./assets/Tools.png";
 import Voice from "./assets/Voice.png";
 import Slider2 from "./components/Slider2";
+import Terminal from "./components/Terminal";
+
+import SliderCard from "./components/SliderCard";
 
 export default function Home() {
   const cards = [
@@ -86,7 +91,7 @@ export default function Home() {
         <NavBar />
         <HeroSection />
         <VIdeoSection />
-        <Explore />
+        <SliderCard />
         <Slider1 cards={cards} autoSlide autoSlideInterval={3000} />
         <Slider2 cards={SecondCard} autoSlide autoSlideInterval={3000} />
         <Trust />
